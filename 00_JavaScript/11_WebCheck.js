@@ -2,7 +2,7 @@
 
 let userId = 'shubhansuKr@LCO.in'
 let userName = 'shubhansu-kr'
-let password = 'myNewPassword'
+let password = 'myNewPassword@21121'
 
 // Validate the email
 
@@ -64,7 +64,42 @@ function validatePassword(pass) {
     // Conditions for Valid Password 
     
     // 1. if (password.length()) 
+    if (pass.length < 8) {
+        return `Length of password must be atleast 8`
+    }
 
+    // 2. Must Contain one lower case char
+    flag1 = 1, flag2 = 1, flag3 = 1, flag4 = 1
+    for (let index = 0; index < pass.length; index++) {
+        const ele = pass[index];
+        if (ele <= 'z' && ele >= 'a') {
+            flag1 = 0;
+        }
+        else if (ele <= 'Z' && ele >= 'A') {
+            flag2 = 0;
+        }
+        else if (ele <= '9' && ele >= '0') {
+            flag3 = 0;
+        }
+        else {
+            flag4 = 0;
+        }
+    }
+    if (flag1 || flag2) {
+        return `Password must contain lower as well as upper case letter`
+    }
 
+    // 3. Must Constains digits 
+    if (flag3) {
+        return `Password must contain digit`
+    }
+    
+    // 4. Must Contain a special symbol
+    if (flag4) {
+        return `Password must contain a special symbol`
+    }
 
+    return 'Valid Password'
 }
+
+console.log(validatePassword(password));
