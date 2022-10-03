@@ -52,7 +52,7 @@ let app = {
 let app1 = {
     name: 'shubh',
     func: ()=>{
-        // Using arrow function: this is not pointing to the obj
+        // Using arrow function: this is pointing to the window object
         console.log(this) // logs obj 
     }
 }
@@ -64,4 +64,18 @@ app1.func()
 // { name: 'shubh', func: [Function: func] }
 // {}
 
+// When we create an arrowFunction inside an object, this refers to the global 
+// object and when we create a normal function inside the object it refers to 
+// the object. 
 
+// If we wish to refer the obj using the arrow function, we can use obj as an argument. 
+
+let app3 = {
+    name: 'shubh',
+    func: ()=>{
+        // Using arrow function: 
+        console.log(app3.name) // logs shubh 
+    }
+}
+
+app3.func()
