@@ -23,7 +23,7 @@ hostName = '127.0.0.1'
 // 4. 500: Internal Server Error
 
 app.get('/', (req, res)=>{
-    res.status(200).send('Home Page')    
+    res.status(201).send('Home Page')    
 })
 
 app.get('/about-us', (req, res)=>{
