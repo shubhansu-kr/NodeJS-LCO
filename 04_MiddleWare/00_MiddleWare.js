@@ -4,10 +4,8 @@ const app = express()
 const hostName = '127.0.0.1'
 const port = 1337
 
-
 // MiddleWares are libraries/codes written beforehand to be used in the 
 // programs. eg. express 
-
 
 const myMiddleWare = (req, res, next) => {
     console.log('I am a middleware')
@@ -44,7 +42,6 @@ app.get('/', (req, res) => {
     res.status(200).send('Hello' + ' The time is: ' + req.requestTime)
     console.log('Inside app');
 })
-
 
 app.listen(port, hostName, () => {
     console.log(`Server is listening at http://${hostName}:${port}`)
