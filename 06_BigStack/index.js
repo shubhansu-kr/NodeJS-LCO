@@ -1,14 +1,13 @@
 const express = require('express')
-
 const app = express()
 
-const port = process.env || 1337
-const hostName = '121.0.0.1'
+port = 1337
+hostName = '127.0.0.1'
 
 app.get('/', (req, res)=>{
-    res.write('BigStack Project')
+    res.send('Big Stack')    
 })
 
-app.listen(port, hostName, () => {
+app.listen(port, hostName, ()=>{
     console.log(`Server is listening at http://${hostName}:${port}`)
 })
